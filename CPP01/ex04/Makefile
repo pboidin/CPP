@@ -1,13 +1,13 @@
-NAME	=	weapon
+NAME	=	sed
 
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-INC		=	HumanA.hpp HumanB.hpp Weapon.hpp
+SRCS	=	main.cpp 
+	
 
 OBJS:= $(SRCS:.cpp=.o)
 
-$(NAME):	$(OBJS) $(INC)
+$(NAME):	$(OBJS)
 				$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
 
 all:		$(NAME)
