@@ -1,6 +1,5 @@
-
-#ifndef HARL_CPP
-# define HARL_CPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 # include <iostream>
 # include <string>
@@ -11,6 +10,7 @@ class Harl
 		Harl();
 		~Harl();
 		void	complain(std::string level);
+
 	private:
 		void	debug(void);
 		void	info(void);
