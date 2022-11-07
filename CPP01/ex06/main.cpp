@@ -27,19 +27,18 @@ int	main(int ac, char **av)
 		case 0:
 			std::cout << "[ DEBUG ]" << std::endl;
 			harl.complain(input);
-			std::cout << std::endl;
+			break;
 		case 1:
 			std::cout << "[ INFO ]" << std::endl;
 			harl.complain(input);
-			std::cout << std::endl;
+			break;
 		case 2:
 			std::cout << "[ WARNING ]" << std::endl;
 			harl.complain(input);
-			std::cout << std::endl;
+			break;
 		case 3:
 			std::cout << "[ ERROR ]" << std::endl;
 			harl.complain(input);
-			std::cout << std::endl;
 			break ;
 		case 4:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

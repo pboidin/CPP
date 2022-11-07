@@ -1,14 +1,14 @@
-NAME	=	sed
+NAME		=	sed
 
-CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRCS	=	main.cpp 
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+SRCS		=	main.cpp 
 	
 
 OBJS:= $(SRCS:.cpp=.o)
 
 $(NAME):	$(OBJS)
-				$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+				$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all:		$(NAME)
 
@@ -23,4 +23,4 @@ fclean:		clean
 re:			fclean all
 
 .cpp.o:
-			$(CC) $(CFLAGS) -c $< -o ${<:.cpp=.o}
+			$(CXX) $(CXXFLAGS) -c $< -o ${<:.cpp=.o}
