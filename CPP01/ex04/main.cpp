@@ -2,60 +2,53 @@
 #include <string>
 #include <fstream>
 
-static int	ft_replace(std::string orig, std::string filename, std::string repl)
+std::string	ft_replace(std::string filename, std::string s1, std::string s2)
 {
-	std::ifstream			file_in(filename);
-	std::ofstream			file_out(filename + ".replace");
-	std::string::size_type	start;
-	int						stop;
-	std::string				buff;
-	std::string::size_type	pos;
-
-	if (!file_out)
+	for (int i = 0; filename[i]; i++)
 	{
-		std::cerr << filename + ".replace cannot be created" << std::endl;
-		return (1);
-	}
-	if (!file_in)
-	{
-		remove((filename + ".replace").c_str());
-		std::cerr << filename + " cannot be opened" << std::endl;
-		return (1);
-	}
-	while (1)
-	{
-		start = 0;
-		stop = getline(file_in, buff).eof();
-		pos = buff.find(orig, start);
-		while (pos != std::string::npos)
+		if (filename[i] == s1[0])
 		{
-			buff.erase(pos, orig.length());
-			buff.insert(pos, repl);
-			start = pos + repl.length();
-			pos = buff.find(orig, start);
+			if (filename.substr(i, s1.size()) == s1)
+			{
+				filename.erase(i, s1.size());
+				filename.insert(i, s2);
+				i += s2.size() - 1;
+			}
 		}
-		file_out << buff;
-		if (stop)
-			break;
-		file_out << std::endl;
 	}
-	return (0);
+	return (filename);
 }
 
 int	main(int argc, char **argv)
 {
 	std::string	filename;
+	std::fstream	s1;
+	std::fstream	s2;
 
-	if (argc != 4)
+	if (argc != 4 || argv[1] == NULL || argv[2] == NULL || argv[3] == NULL)
 	{
 		std::cerr << "Invalid Number of Arguments" << std::endl;
 		return (1);
 	}
-	if (argv[2][0] == '\0')
+	s1.open(argv[1] + std::ios::in);
+	if (!s1)
 	{
-		std::cerr << "Input find strings are empty" << std::endl;
+		std::cout << "Error: file " << argv[1] << " not found" << std::endl;
 		return (1);
 	}
-	filename = argv[1];
-	return (ft_replace(std::string(argv[2]), filename, std::string(argv[3])));
+	s2.open(argv[1] + std::string(".replace"), std::ios::out);
+	if (!s2)
+	{
+		std::cout << "Error: file " << argv[1] << ".replace can't be create" << std::endl;
+		return (1);
+	}
+	while (!s1.eof())
+	{
+		getline(s1, filename);
+		s2 << ft_replace(filename, argv[2], argv[3]) << std::endl;
+	}
+	std::cout << argv[1] << " has been replaced !" << std::endl;
+	s1.close();
+	s2.close();
+	return (0); 
 }
