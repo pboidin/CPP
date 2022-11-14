@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "(ClapTrap) Default Constructor Called" << std::endl;
+    std::cout << "ClapTrap - Default Constructor Called" << std::endl;
     this->_name = "Null";
     this->_hp = 10;
     this->_ep = 10;
@@ -11,13 +11,13 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-    std::cout << "(ClapTrap) Copy Constructor Called" << std::endl;
+    std::cout << "ClapTrap - Copy Constructor Called" << std::endl;
     *this = src;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "(ClapTrap) Destructor Called" << std::endl;
+    std::cout << "ClapTrap - Destructor Called" << std::endl;
 }
 
 ClapTrap 			&ClapTrap::operator=(const ClapTrap &src)
@@ -55,10 +55,10 @@ void    ClapTrap::attack(const std::string &target)
     {
 		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
 		this->_ep--;
-		std::cout << "ClapTrap" << this->_name << " Ep has been reduced to " << this->_ep << std::endl;
+		std::cout << "ClapTrap " << this->_name << " Ep has been reduced to " << this->_ep << std::endl;
 	}
 	else
-		std::cout << "ClapTrap" << this->_name << " has not enough Ep!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has not enough Ep!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
