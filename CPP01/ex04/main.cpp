@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 
 std::string	ft_replace(std::string filename, std::string s1, std::string s2)
 {
@@ -21,9 +22,12 @@ std::string	ft_replace(std::string filename, std::string s1, std::string s2)
 
 int	main(int argc, char **argv)
 {
-	std::string	filename;
+	std::string		filename;
+	std::string		arg1 = argv[1];
+	std::string		arg = arg1 + ".replace";
 	std::fstream	s1;
 	std::fstream	s2;
+	const char		*convert = arg.c_str();
 
 	if (argc != 4 || argv[1] == NULL || argv[2] == NULL || argv[3] == NULL)
 	{
@@ -36,7 +40,7 @@ int	main(int argc, char **argv)
 		std::cout << "Error: file " << argv[1] << " not found" << std::endl;
 		return (1);
 	}
-	s2.open(argv[1] + std::string(".replace"), std::ios::out);
+	s2.open(convert, std::ios::out);
 	if (!s2)
 	{
 		std::cout << "Error: file " << argv[1] << ".replace can't be create" << std::endl;
