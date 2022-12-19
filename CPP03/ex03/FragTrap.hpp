@@ -14,6 +14,11 @@ class FragTrap : public ClapTrap
 
 		void		attack(const std::string &tar);
 		void		highFivesGuys();
+	
+	protected:
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
 };
 
 #endif

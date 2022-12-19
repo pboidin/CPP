@@ -9,6 +9,7 @@ class ClapTrap
     public:
         ClapTrap();
 		ClapTrap(const ClapTrap &src);
+		ClapTrap(const std::string &name);
         virtual				~ClapTrap();
 		
 		ClapTrap 			&operator=(const ClapTrap &src);

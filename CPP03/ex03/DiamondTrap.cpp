@@ -8,7 +8,6 @@ DiamondTrap::DiamondTrap()
     std::cout << "DiamondTrap - Call of Default constructor" << std::endl;
 }
 
-
 /* Default constructor with input of Diamondtrap Class */
 DiamondTrap::DiamondTrap(const std::string &name)
 {
@@ -30,7 +29,7 @@ DiamondTrap::~DiamondTrap()
 }
 
 /* Copy assignation operator of Diamondtrap Class */
-DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &src)
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 {
 	this->_name = src._name;
 	this->_hp = src._hp;

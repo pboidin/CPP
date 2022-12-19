@@ -10,8 +10,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
     	DiamondTrap();
 		DiamondTrap(const std::string &name);
 		DiamondTrap(const DiamondTrap &src);
-    	virtual		~DiamondTrap();
-		DiamondTrap	&operator=(const DiamondTrap &src);
+    	virtual				~DiamondTrap();
+		DiamondTrap			&operator=(const DiamondTrap &src);
 
 		using ScavTrap::attack;
 		std::string			&getName();

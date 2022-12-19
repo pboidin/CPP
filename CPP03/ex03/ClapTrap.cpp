@@ -17,6 +17,15 @@ ClapTrap::ClapTrap(const ClapTrap &src)
     *this = src;
 }
 
+/* .Constructor function for string input of ClapTrap class */
+ClapTrap::ClapTrap(const std::string &name)
+{
+	this->_name = name;
+	this->_hp = 10;
+	this->_ep = 10;
+	this->_ad = 10;
+}
+
 /* Destructor of ClassTrap Class */
 ClapTrap::~ClapTrap()
 {
