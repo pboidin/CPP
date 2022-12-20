@@ -10,7 +10,6 @@ class ClapTrap
         ClapTrap();
 		ClapTrap(const ClapTrap &src);
         ~ClapTrap();
-
 		ClapTrap 			&operator=(const ClapTrap &src);
 
 		void				attack(const std::string& target);
