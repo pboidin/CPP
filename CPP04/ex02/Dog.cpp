@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/27 15:29:06 by piboidin          #+#    #+#             */
+/*   Updated: 2022/12/27 15:29:07 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /* Default constructor function of Dog */
@@ -16,7 +28,7 @@ Dog::Dog()
 	}
 }
 
-/* Copy contructori default of Dog */
+/* Copy contructor default of Dog */
 Dog::Dog(const Dog &src)
 {
 	std::cout << "Dog - Copy Constructor function" << std::endl;
