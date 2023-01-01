@@ -28,5 +28,5 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPard
 
 void	PresidentialPardonForm::perform() const
 {
-	std::cout << this->_target << " has been pardoned by Emmanuel Macron!" << std::endl;
+	std::cout << this->_target << " has been pardoned by Emmanuel Macron" << std::endl;
 }
