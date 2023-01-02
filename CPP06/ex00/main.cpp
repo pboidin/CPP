@@ -6,7 +6,7 @@
 /*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 19:43:51 by piboidin          #+#    #+#             */
-/*   Updated: 2023/01/02 19:43:53 by piboidin         ###   ########.fr       */
+/*   Updated: 2023/01/02 19:59:34 by piboidin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int	main(int argc, char **argv)
 		if (f - static_cast<int>(f) != 0)
 			std::cout << "float: " << f << "f" << std::endl;
 		else
-			std::cout << "float: " << f << ";0f" << std::endl;
+			std::cout << "float: " << f << ".0f" << std::endl;
 		d = scalarConverter.toDouble(input);
 		if (d - static_cast<int>(d) != 0)
 			std::cout << "double: " << d << std::endl;
