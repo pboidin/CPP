@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 19:44:03 by piboidin          #+#    #+#             */
+/*   Updated: 2023/01/02 19:44:04 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
@@ -5,6 +17,8 @@
 # include <string>
 # include <limits>
 # include <cmath>
+# include <climits>
+# include <stdlib.h>
 
 class ScalarConverter
 {

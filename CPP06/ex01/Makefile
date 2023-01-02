@@ -1,6 +1,6 @@
 NAME	=	serialize
 
-CXX			=	c++
+CXX			=	g++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
 SRCS		=	main.cpp
 INC			=	main.hpp

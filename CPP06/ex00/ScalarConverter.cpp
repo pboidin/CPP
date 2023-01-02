@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 19:43:56 by piboidin          #+#    #+#             */
+/*   Updated: 2023/01/02 19:43:59 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
@@ -67,6 +79,5 @@ double	ScalarConverter::convertInput(std::string input)
 	}
 	if (dot_counter > 1)
 		throw std::string("Cannot be converted");
-	return (std::stod(input));
-	
+	return (atof(input.c_str()));
 }

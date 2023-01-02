@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 19:45:27 by piboidin          #+#    #+#             */
+/*   Updated: 2023/01/02 19:45:28 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.hpp"
 
 Base	*generate(void)
@@ -25,12 +37,36 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	if (dynamic_cast<A *>(&p) != NULL)
+	try
+	{
+		A & tmp = dynamic_cast<A &>(p);
+		(void) tmp;
 		std::cout << "A" << std::endl;
-	if (dynamic_cast<B *>(&p) != NULL)
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		B & tmp = dynamic_cast<B &>(p);
+		(void) tmp;
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<C *>(&p) != NULL)
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		C & tmp = dynamic_cast<C &>(p);
+		(void) tmp;
 		std::cout << "C" << std::endl;
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
 }
 
 int	main(void)
