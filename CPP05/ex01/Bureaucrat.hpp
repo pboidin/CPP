@@ -19,7 +19,7 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat			&operator=(const Bureaucrat &src);
 
-		const std::string	getName() const;
+		std::string const	getName() const;
 		int					getGrade() const;
 		void				doIncrement();
 		void				doDecrement();
@@ -37,5 +37,6 @@ class Bureaucrat
 		};
 };
 
+std::ostream	&operator<<( std::ostream &ostr, const Bureaucrat &inst );
 
 #endif

@@ -6,6 +6,8 @@ int main()
 	try
     {
         Bureaucrat bur_ex("Bureaucrat1", 1);
+        bur_ex.doDecrement();
+        std::cout << bur_ex << std::endl;
     }
     catch(const std::exception &e)
     {
@@ -14,6 +16,8 @@ int main()
     try
     {
         Bureaucrat bur_ex("Bureaucrat2", 150);
+        bur_ex.doIncrement();
+        std::cout << bur_ex << std::endl;
     }
     catch(const std::exception &e)
     {

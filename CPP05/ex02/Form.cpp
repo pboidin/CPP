@@ -64,7 +64,6 @@ void	Form::execute(const Bureaucrat &executor) const
 		throw Form::GradeTooLowException();
 	if (this->_signed == false)
 		throw Form::FormNotSigned();
-	perform();
 }
 
 const char	*Form::GradeTooHighException::what() const throw()

@@ -26,8 +26,9 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 	return (*this);
 }
 
-void	RobotomyRequestForm::perform() const
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+	Form::execute(executor);
 	std::cout << "Drilling noises... " << std::endl;
 	srand(time(NULL));
 	if (rand() % 2 == 0)

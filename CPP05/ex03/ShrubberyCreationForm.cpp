@@ -26,9 +26,12 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void	ShrubberyCreationForm::perform() const
+void		ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-	std::ofstream	out_file(this->_target + "_shrubbery");
+	Form::execute(executor);
+	std::string	fileName(this->_target);
+	fileName += "_shrubbery";
+	std::ofstream out_file(fileName.c_str(), std::ofstream::out);	
 	out_file << "Trees ASCII: " << std::endl;
 	out_file << "	     &&& &&  & &&" << std::endl;
 	out_file << "      && &\\/&\\|& ()|/ @, &&" << std::endl;
@@ -66,4 +69,5 @@ void	ShrubberyCreationForm::perform() const
 	out_file << "       |.|        | |         | |" << std::endl;
 	out_file << "    \\/ .\\/|_/__/  \\_/__|\\/. \\_/__/_" << std::endl;
 	out_file << std::endl;
+	out_file.close();
 }

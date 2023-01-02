@@ -2,6 +2,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include "Form.hpp"
+# include <cstdlib>
 
 class RobotomyRequestForm : public Form
 {
@@ -14,7 +15,7 @@ public:
 	~RobotomyRequestForm();
 	RobotomyRequestForm		&operator=(const RobotomyRequestForm &src);
 
-	void					perform() const;
+	virtual void		execute(const Bureaucrat &executor) const;
 };
 
 #endif
