@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 20:02:18 by piboidin          #+#    #+#             */
+/*   Updated: 2023/01/02 20:02:19 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
 
 Span::Span()
@@ -44,8 +56,8 @@ void	Span::addNumber(std::vector<int>::iterator const &begin, std::vector<int>::
 	if (newVector.size() + this->_storage.size() > this->_N)
 		throw Span::SpanLimitReached();
 	this->_storage.insert(this->_storage.end(),
-		std::make_move_iterator(newVector.begin()),
-		std::make_move_iterator(newVector.end()));
+		std::move_iterator(newVector.begin()),
+		std::move_iterator(newVector.end()));
 }
 
 static long	getDistance(long first, long second)
