@@ -1,19 +1,28 @@
 #include "BitcoinExchange.hpp"
 
-int main(int argc, char **argv) {
-    if (argc != 2)
-        std::cout << "Error: could not open file.\n";
-	std::queue<BitcoinExchange> bit;
-	std::ifstream configfile(argv[1]);
-	std::string read;
-
-	while(getline(configfile, read)) {
-        BitcoinExchange b(read);
-        bit.push(b);
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        std::cerr << "Error: Could not open file\n";
+        return 1;
     }
 
-	while(!bit.empty()) {
-		bit.front().SaveData();
-		bit.pop();
-	}
+    std::ifstream datafile("data.csv");
+    if (!datafile) {
+        std::cerr << "Error: Could not open data.csv file.\n";
+        return 1;
+    }
+
+    std::ifstream txtfile(argv[1]);
+    if (!txtfile) {
+        std::cerr << "Error: Could not open txt file.\n";
+        datafile.close();
+        return 1;
+    }
+
+    btc bitcoin(datafile, txtfile);
+    //bitcoin.PrintValues();
+
+    datafile.close();
+    txtfile.close();
+    return 0;
 }

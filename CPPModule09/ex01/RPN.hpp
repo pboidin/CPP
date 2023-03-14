@@ -12,13 +12,12 @@ class RPN {
 		RPN(const std::string& expr);
 		~RPN();
 		RPN(const RPN& other);
-		RPN& operator=(const RPN& other);
-
-		int evaluate();
+		RPN& 			operator=(const RPN& other);
+		int				evaluate();
 
 	private:
-		std::stack<int> _operands;
-		std::string _expression;
+		std::stack<int>	_operands;
+		std::string		_expression;
 };
 
 # endif

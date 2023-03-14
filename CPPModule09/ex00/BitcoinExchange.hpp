@@ -1,26 +1,26 @@
 #ifndef	BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-# include <iostream>
-# include <queue>
-# include <sstream>
-# include <fstream>
-# include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <map>
+#include <stdexcept>
+#include <stdlib.h>
 
-class BitcoinExchange
-{
-	private:
-		std::string	_str;
+class btc {
 	public:
-		BitcoinExchange();
-		BitcoinExchange(const std::string &str);
-		~BitcoinExchange();
-		BitcoinExchange &operator=(BitcoinExchange const &rhs);
+		btc(std::ifstream& infile, std::ifstream& txtfile);
+		btc(const btc& other);
+		~btc();
+		btc&							operator=(const btc& other);
+		void							PrintValues() const;
 
-		bool				CheckDate(const std::string &str);
-		bool				CheckValue(const std::string &str);
-		const std::string	PrintQueue() const;
-		void				SaveData();
+	private:
+		std::map<std::string, double>	btc_values;
+		void							LoadBtcData(std::ifstream& infile);
+		double							GetBtcValue(const std::string& date) const;
 };
 
 #endif

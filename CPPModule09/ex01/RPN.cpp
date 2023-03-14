@@ -21,7 +21,7 @@ int RPN::evaluate() {
             _operands.push(c - '0');
 		} else if (c == '+' || c == '-' || c == '*' || c == '/') {
             if (_operands.size() < 2) {
-                std::cout << "Error: Not enough operands!" << std::endl;
+                std::cout << "Error" << std::endl;
                 return 0;
             }
             int op2 = _operands.top();
@@ -51,7 +51,7 @@ int RPN::evaluate() {
         }
     }
     if (_operands.size() != 1) {
-        std::cout << "Error: Too many operands!" << std::endl;
+        std::cout << "Error" << std::endl;
         return 0;
     }
     return _operands.top();

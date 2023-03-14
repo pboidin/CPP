@@ -146,17 +146,20 @@ void PmergeMe::SortList(std::list<int> &list) {
 double PmergeMe::Sorter(char **argv) {
 	std::clock_t s, e;
 	double v_time, l_time;
+
 	for (int i = 1; argv[i]; i++) {
 		if (argv[i][0] == '-')
 			throw std::invalid_argument("Error");
-			if (CheckIsNum(argv[i])) {
-				vector.push_back(std::stoi(argv[i]));
-				list.push_back(std::stoi(argv[i]));
-			}
-			else
-				throw std::invalid_argument("Error");
+		if (CheckIsNum(argv[i])) {
+			vector.push_back(atoi(argv[i]));
+			list.push_back(atoi(argv[i]));
+		}
+		else
+			throw std::invalid_argument("Error");
     }
+
 	std::cout << "Before: ";
+
 	if (vector.size() <= (size_t)5) {
 		for (size_t i = 0; i < vector.size(); i++)
 			std::cout << vector[i] << " ";
@@ -166,6 +169,7 @@ double PmergeMe::Sorter(char **argv) {
 			std::cout << vector[i] << " ";
 		std::cout << "[...]" << std::endl;
     }
+
 	s = std::clock();
     SortVector(vector, 0, vector.size() - 1, vector.size() / 4);
 	e = std::clock();
@@ -174,7 +178,9 @@ double PmergeMe::Sorter(char **argv) {
     SortList(list);
 	e = std::clock();
 	l_time = (double)(e - s) / CLOCKS_PER_SEC * 1000;
+
 	std::cout << "After:  ";
+
     if (vector.size() <= (size_t)5) {
 		for (size_t i = 0; i < vector.size(); i++)
 			std::cout << vector[i] << " ";
@@ -184,6 +190,7 @@ double PmergeMe::Sorter(char **argv) {
 			std::cout << vector[i] << " ";
 		std::cout << "[...]" << std::endl;
     }
+	
 	std::cout << "Time to process a range of " << vector.size()<< " elements with std::vector: " << (double)v_time << " us" << std::endl;
 	std::cout << "Time to process a range of " << vector.size() <<" elements with std::list: " << (double)l_time << " us" << std::endl;
 	return 0;

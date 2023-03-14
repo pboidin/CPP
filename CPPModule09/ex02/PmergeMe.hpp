@@ -1,11 +1,13 @@
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <list>
-#include <ctime>
+# include <iostream>
+# include <vector>
+# include <string>
+# include <list>
+# include <ctime>
+# include <sstream>
+# include <stdlib.h> 
 
 class PmergeMe {
     private :
