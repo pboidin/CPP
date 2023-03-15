@@ -33,7 +33,8 @@ btc::btc(std::ifstream& infile, std::ifstream& txtfile) {
             continue;
         }
         double exchange_rate = value * btc_value;
-        std::cout << date_str << " => " << value << " = " << exchange_rate << std::endl;
+        if (date_str != "date")
+            std::cout << date_str << " => " << value << " = " << exchange_rate << std::endl;
     }
 }
 
