@@ -150,6 +150,8 @@ double PmergeMe::Sorter(char **argv) {
 	for (int i = 1; argv[i]; i++) {
 		if (argv[i][0] == '-')
 			throw std::invalid_argument("Error");
+		if (atoi(argv[i]) < 0)
+			throw std::invalid_argument("Error");
 		if (CheckIsNum(argv[i])) {
 			vector.push_back(atoi(argv[i]));
 			list.push_back(atoi(argv[i]));
