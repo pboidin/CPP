@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    btc bitcoin(datafile, txtfile);
+    Btc bitcoin(datafile, txtfile);
     //bitcoin.PrintValues();
 
     datafile.close();
