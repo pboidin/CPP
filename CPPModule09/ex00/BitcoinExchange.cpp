@@ -141,7 +141,7 @@ double Btc::GetBtcValue(const std::string& date) const {
 }
 
 bool	Btc::dateFinder(const std::string& date) {
-    if (date.length() != 10) {
+    if (date.length() != 10) {  
         return false;
     }
 
@@ -149,12 +149,15 @@ bool	Btc::dateFinder(const std::string& date) {
     char sep1, sep2;
     std::istringstream iss(date);
     iss >> year >> sep1 >> month >> sep2 >> day;
+    if (year < 2009 || date == "2009-01-01")
+		return false;
+    
     if (iss.fail() || sep1 != '-' || sep2 != '-' || year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
         return false;
 
     bool check_year = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
     if ((month == 2 && (check_year ? day > 29 : day > 28)) || ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)) {
-		std::cerr << "Date doesn't exist" << std::endl;
+		std::cerr << "Error: Date doesn't exist" << std::endl;
         return false;
     }
 
